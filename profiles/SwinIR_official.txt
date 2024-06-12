@@ -1,0 +1,332 @@
+==================== Throughput stats ====================
+SIZE | FPS
+64 | 119978
+128 | 39590
+256 | 12139
+==================== Metrics ====================
+NAME | PNSR | SSIM
+SET14 | 28.2085 | 0.7685
+BSD100 | 24.0346 | 0.7080
+URBAN100 | 27.7790 | 0.8397
+MANGA109 | 23.4692 | 0.8297
+==================== Memory stats ====================
+                                         module name  input shape   output shape    params memory(MB)               MAdd              Flops  MemRead(B)  MemWrite(B) duration[%]     MemR+W(B)
+0                                         conv_first    3 256 256     60 256 256    1680.0      15.00      212,336,640.0      110,100,480.0    793152.0   15728640.0       0.54%  1.652179e+07
+1                                   patch_embed.norm    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.64%  0.000000e+00
+2                                      patch_unembed    65536  60     60 256 256       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+3                                           pos_drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+4             layers.0.residual_group.blocks.0.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.14%  0.000000e+00
+5          layers.0.residual_group.blocks.0.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.89%  1.078886e+08
+6    layers.0.residual_group.blocks.0.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.01%  0.000000e+00
+7         layers.0.residual_group.blocks.0.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.36%  4.644864e+07
+8    layers.0.residual_group.blocks.0.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+9      layers.0.residual_group.blocks.0.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       1.16%  0.000000e+00
+10        layers.0.residual_group.blocks.0.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+11            layers.0.residual_group.blocks.0.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.15%  0.000000e+00
+12          layers.0.residual_group.blocks.0.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.42%  4.721520e+07
+13          layers.0.residual_group.blocks.0.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.30%  0.000000e+00
+14          layers.0.residual_group.blocks.0.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.33%  4.721496e+07
+15         layers.0.residual_group.blocks.0.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+16            layers.0.residual_group.blocks.1.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.13%  0.000000e+00
+17         layers.0.residual_group.blocks.1.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.63%  1.078886e+08
+18   layers.0.residual_group.blocks.1.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.01%  0.000000e+00
+19        layers.0.residual_group.blocks.1.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.22%  4.644864e+07
+20   layers.0.residual_group.blocks.1.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+21     layers.0.residual_group.blocks.1.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       5.65%  0.000000e+00
+22        layers.0.residual_group.blocks.1.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+23            layers.0.residual_group.blocks.1.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.09%  0.000000e+00
+24          layers.0.residual_group.blocks.1.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.43%  4.721520e+07
+25          layers.0.residual_group.blocks.1.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.26%  0.000000e+00
+26          layers.0.residual_group.blocks.1.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.33%  4.721496e+07
+27         layers.0.residual_group.blocks.1.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+28            layers.0.residual_group.blocks.2.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.08%  0.000000e+00
+29         layers.0.residual_group.blocks.2.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.59%  1.078886e+08
+30   layers.0.residual_group.blocks.2.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+31        layers.0.residual_group.blocks.2.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.20%  4.644864e+07
+32   layers.0.residual_group.blocks.2.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+33     layers.0.residual_group.blocks.2.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       0.90%  0.000000e+00
+34        layers.0.residual_group.blocks.2.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+35            layers.0.residual_group.blocks.2.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.14%  0.000000e+00
+36          layers.0.residual_group.blocks.2.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.43%  4.721520e+07
+37          layers.0.residual_group.blocks.2.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+38          layers.0.residual_group.blocks.2.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.33%  4.721496e+07
+39         layers.0.residual_group.blocks.2.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+40            layers.0.residual_group.blocks.3.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.14%  0.000000e+00
+41         layers.0.residual_group.blocks.3.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.59%  1.078886e+08
+42   layers.0.residual_group.blocks.3.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.01%  0.000000e+00
+43        layers.0.residual_group.blocks.3.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.24%  4.644864e+07
+44   layers.0.residual_group.blocks.3.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+45     layers.0.residual_group.blocks.3.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       5.84%  0.000000e+00
+46        layers.0.residual_group.blocks.3.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+47            layers.0.residual_group.blocks.3.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.09%  0.000000e+00
+48          layers.0.residual_group.blocks.3.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.42%  4.721520e+07
+49          layers.0.residual_group.blocks.3.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.27%  0.000000e+00
+50          layers.0.residual_group.blocks.3.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.33%  4.721496e+07
+51         layers.0.residual_group.blocks.3.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+52            layers.0.residual_group.blocks.4.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.13%  0.000000e+00
+53         layers.0.residual_group.blocks.4.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.60%  1.078886e+08
+54   layers.0.residual_group.blocks.4.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+55        layers.0.residual_group.blocks.4.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.20%  4.644864e+07
+56   layers.0.residual_group.blocks.4.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+57     layers.0.residual_group.blocks.4.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       0.91%  0.000000e+00
+58        layers.0.residual_group.blocks.4.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+59            layers.0.residual_group.blocks.4.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.14%  0.000000e+00
+60          layers.0.residual_group.blocks.4.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.41%  4.721520e+07
+61          layers.0.residual_group.blocks.4.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+62          layers.0.residual_group.blocks.4.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+63         layers.0.residual_group.blocks.4.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+64            layers.0.residual_group.blocks.5.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.13%  0.000000e+00
+65         layers.0.residual_group.blocks.5.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.63%  1.078886e+08
+66   layers.0.residual_group.blocks.5.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+67        layers.0.residual_group.blocks.5.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.23%  4.644864e+07
+68   layers.0.residual_group.blocks.5.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+69     layers.0.residual_group.blocks.5.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       1.63%  0.000000e+00
+70        layers.0.residual_group.blocks.5.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+71            layers.0.residual_group.blocks.5.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.09%  0.000000e+00
+72          layers.0.residual_group.blocks.5.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.42%  4.721520e+07
+73          layers.0.residual_group.blocks.5.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.27%  0.000000e+00
+74          layers.0.residual_group.blocks.5.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+75         layers.0.residual_group.blocks.5.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+76                                     layers.0.conv   60 256 256     60 256 256   32460.0      15.00    4,246,732,800.0    2,127,298,560.0  15858480.0   15728640.0       1.25%  3.158712e+07
+77                              layers.0.patch_embed   60 256 256      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.01%  0.000000e+00
+78                            layers.0.patch_unembed    65536  60     60 256 256       0.0      15.00                0.0                0.0         0.0          0.0       0.01%  0.000000e+00
+79            layers.1.residual_group.blocks.0.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.16%  0.000000e+00
+80         layers.1.residual_group.blocks.0.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.62%  1.078886e+08
+81   layers.1.residual_group.blocks.0.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+82        layers.1.residual_group.blocks.0.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.20%  4.644864e+07
+83   layers.1.residual_group.blocks.0.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+84     layers.1.residual_group.blocks.0.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       0.90%  0.000000e+00
+85        layers.1.residual_group.blocks.0.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+86            layers.1.residual_group.blocks.0.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.28%  0.000000e+00
+87          layers.1.residual_group.blocks.0.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.40%  4.721520e+07
+88          layers.1.residual_group.blocks.0.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+89          layers.1.residual_group.blocks.0.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+90         layers.1.residual_group.blocks.0.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+91            layers.1.residual_group.blocks.1.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.26%  0.000000e+00
+92         layers.1.residual_group.blocks.1.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.63%  1.078886e+08
+93   layers.1.residual_group.blocks.1.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+94        layers.1.residual_group.blocks.1.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.22%  4.644864e+07
+95   layers.1.residual_group.blocks.1.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+96     layers.1.residual_group.blocks.1.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       1.59%  0.000000e+00
+97        layers.1.residual_group.blocks.1.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+98            layers.1.residual_group.blocks.1.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.24%  0.000000e+00
+99          layers.1.residual_group.blocks.1.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.43%  4.721520e+07
+100         layers.1.residual_group.blocks.1.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+101         layers.1.residual_group.blocks.1.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+102        layers.1.residual_group.blocks.1.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+103           layers.1.residual_group.blocks.2.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.26%  0.000000e+00
+104        layers.1.residual_group.blocks.2.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.63%  1.078886e+08
+105  layers.1.residual_group.blocks.2.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+106       layers.1.residual_group.blocks.2.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.20%  4.644864e+07
+107  layers.1.residual_group.blocks.2.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+108    layers.1.residual_group.blocks.2.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       0.90%  0.000000e+00
+109       layers.1.residual_group.blocks.2.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+110           layers.1.residual_group.blocks.2.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.28%  0.000000e+00
+111         layers.1.residual_group.blocks.2.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.39%  4.721520e+07
+112         layers.1.residual_group.blocks.2.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+113         layers.1.residual_group.blocks.2.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+114        layers.1.residual_group.blocks.2.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+115           layers.1.residual_group.blocks.3.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.27%  0.000000e+00
+116        layers.1.residual_group.blocks.3.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.62%  1.078886e+08
+117  layers.1.residual_group.blocks.3.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+118       layers.1.residual_group.blocks.3.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.22%  4.644864e+07
+119  layers.1.residual_group.blocks.3.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+120    layers.1.residual_group.blocks.3.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       1.56%  0.000000e+00
+121       layers.1.residual_group.blocks.3.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+122           layers.1.residual_group.blocks.3.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.24%  0.000000e+00
+123         layers.1.residual_group.blocks.3.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.43%  4.721520e+07
+124         layers.1.residual_group.blocks.3.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+125         layers.1.residual_group.blocks.3.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+126        layers.1.residual_group.blocks.3.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+127           layers.1.residual_group.blocks.4.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.22%  0.000000e+00
+128        layers.1.residual_group.blocks.4.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.59%  1.078886e+08
+129  layers.1.residual_group.blocks.4.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+130       layers.1.residual_group.blocks.4.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.20%  4.644864e+07
+131  layers.1.residual_group.blocks.4.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+132    layers.1.residual_group.blocks.4.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       0.91%  0.000000e+00
+133       layers.1.residual_group.blocks.4.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+134           layers.1.residual_group.blocks.4.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.27%  0.000000e+00
+135         layers.1.residual_group.blocks.4.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.42%  4.721520e+07
+136         layers.1.residual_group.blocks.4.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+137         layers.1.residual_group.blocks.4.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+138        layers.1.residual_group.blocks.4.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+139           layers.1.residual_group.blocks.5.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.26%  0.000000e+00
+140        layers.1.residual_group.blocks.5.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.62%  1.078886e+08
+141  layers.1.residual_group.blocks.5.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+142       layers.1.residual_group.blocks.5.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.21%  4.644864e+07
+143  layers.1.residual_group.blocks.5.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+144    layers.1.residual_group.blocks.5.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       1.51%  0.000000e+00
+145       layers.1.residual_group.blocks.5.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+146           layers.1.residual_group.blocks.5.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.24%  0.000000e+00
+147         layers.1.residual_group.blocks.5.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.41%  4.721520e+07
+148         layers.1.residual_group.blocks.5.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+149         layers.1.residual_group.blocks.5.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+150        layers.1.residual_group.blocks.5.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+151                                    layers.1.conv   60 256 256     60 256 256   32460.0      15.00    4,246,732,800.0    2,127,298,560.0  15858480.0   15728640.0       0.96%  3.158712e+07
+152                             layers.1.patch_embed   60 256 256      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+153                           layers.1.patch_unembed    65536  60     60 256 256       0.0      15.00                0.0                0.0         0.0          0.0       0.01%  0.000000e+00
+154           layers.2.residual_group.blocks.0.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.26%  0.000000e+00
+155        layers.2.residual_group.blocks.0.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.62%  1.078886e+08
+156  layers.2.residual_group.blocks.0.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+157       layers.2.residual_group.blocks.0.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.20%  4.644864e+07
+158  layers.2.residual_group.blocks.0.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+159    layers.2.residual_group.blocks.0.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       0.88%  0.000000e+00
+160       layers.2.residual_group.blocks.0.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+161           layers.2.residual_group.blocks.0.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.27%  0.000000e+00
+162         layers.2.residual_group.blocks.0.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.42%  4.721520e+07
+163         layers.2.residual_group.blocks.0.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+164         layers.2.residual_group.blocks.0.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.31%  4.721496e+07
+165        layers.2.residual_group.blocks.0.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+166           layers.2.residual_group.blocks.1.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.26%  0.000000e+00
+167        layers.2.residual_group.blocks.1.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.57%  1.078886e+08
+168  layers.2.residual_group.blocks.1.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+169       layers.2.residual_group.blocks.1.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.22%  4.644864e+07
+170  layers.2.residual_group.blocks.1.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+171    layers.2.residual_group.blocks.1.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       1.51%  0.000000e+00
+172       layers.2.residual_group.blocks.1.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+173           layers.2.residual_group.blocks.1.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.27%  0.000000e+00
+174         layers.2.residual_group.blocks.1.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.43%  4.721520e+07
+175         layers.2.residual_group.blocks.1.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+176         layers.2.residual_group.blocks.1.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+177        layers.2.residual_group.blocks.1.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+178           layers.2.residual_group.blocks.2.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.23%  0.000000e+00
+179        layers.2.residual_group.blocks.2.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.62%  1.078886e+08
+180  layers.2.residual_group.blocks.2.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+181       layers.2.residual_group.blocks.2.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.20%  4.644864e+07
+182  layers.2.residual_group.blocks.2.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+183    layers.2.residual_group.blocks.2.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       0.88%  0.000000e+00
+184       layers.2.residual_group.blocks.2.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+185           layers.2.residual_group.blocks.2.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.27%  0.000000e+00
+186         layers.2.residual_group.blocks.2.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.42%  4.721520e+07
+187         layers.2.residual_group.blocks.2.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+188         layers.2.residual_group.blocks.2.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+189        layers.2.residual_group.blocks.2.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+190           layers.2.residual_group.blocks.3.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.26%  0.000000e+00
+191        layers.2.residual_group.blocks.3.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.62%  1.078886e+08
+192  layers.2.residual_group.blocks.3.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+193       layers.2.residual_group.blocks.3.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.21%  4.644864e+07
+194  layers.2.residual_group.blocks.3.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+195    layers.2.residual_group.blocks.3.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       1.45%  0.000000e+00
+196       layers.2.residual_group.blocks.3.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+197           layers.2.residual_group.blocks.3.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.23%  0.000000e+00
+198         layers.2.residual_group.blocks.3.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.42%  4.721520e+07
+199         layers.2.residual_group.blocks.3.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+200         layers.2.residual_group.blocks.3.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+201        layers.2.residual_group.blocks.3.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+202           layers.2.residual_group.blocks.4.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.26%  0.000000e+00
+203        layers.2.residual_group.blocks.4.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.59%  1.078886e+08
+204  layers.2.residual_group.blocks.4.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+205       layers.2.residual_group.blocks.4.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.20%  4.644864e+07
+206  layers.2.residual_group.blocks.4.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+207    layers.2.residual_group.blocks.4.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       0.88%  0.000000e+00
+208       layers.2.residual_group.blocks.4.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+209           layers.2.residual_group.blocks.4.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.27%  0.000000e+00
+210         layers.2.residual_group.blocks.4.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.42%  4.721520e+07
+211         layers.2.residual_group.blocks.4.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+212         layers.2.residual_group.blocks.4.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.31%  4.721496e+07
+213        layers.2.residual_group.blocks.4.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+214           layers.2.residual_group.blocks.5.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.26%  0.000000e+00
+215        layers.2.residual_group.blocks.5.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.56%  1.078886e+08
+216  layers.2.residual_group.blocks.5.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+217       layers.2.residual_group.blocks.5.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.21%  4.644864e+07
+218  layers.2.residual_group.blocks.5.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+219    layers.2.residual_group.blocks.5.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       1.42%  0.000000e+00
+220       layers.2.residual_group.blocks.5.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+221           layers.2.residual_group.blocks.5.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.23%  0.000000e+00
+222         layers.2.residual_group.blocks.5.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.40%  4.721520e+07
+223         layers.2.residual_group.blocks.5.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.24%  0.000000e+00
+224         layers.2.residual_group.blocks.5.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.31%  4.721496e+07
+225        layers.2.residual_group.blocks.5.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+226                                    layers.2.conv   60 256 256     60 256 256   32460.0      15.00    4,246,732,800.0    2,127,298,560.0  15858480.0   15728640.0       0.99%  3.158712e+07
+227                             layers.2.patch_embed   60 256 256      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+228                           layers.2.patch_unembed    65536  60     60 256 256       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+229           layers.3.residual_group.blocks.0.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.15%  0.000000e+00
+230        layers.3.residual_group.blocks.0.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.63%  1.078886e+08
+231  layers.3.residual_group.blocks.0.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.01%  0.000000e+00
+232       layers.3.residual_group.blocks.0.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.21%  4.644864e+07
+233  layers.3.residual_group.blocks.0.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+234    layers.3.residual_group.blocks.0.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       0.89%  0.000000e+00
+235       layers.3.residual_group.blocks.0.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+236           layers.3.residual_group.blocks.0.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.27%  0.000000e+00
+237         layers.3.residual_group.blocks.0.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.40%  4.721520e+07
+238         layers.3.residual_group.blocks.0.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.24%  0.000000e+00
+239         layers.3.residual_group.blocks.0.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+240        layers.3.residual_group.blocks.0.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+241           layers.3.residual_group.blocks.1.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.24%  0.000000e+00
+242        layers.3.residual_group.blocks.1.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.63%  1.078886e+08
+243  layers.3.residual_group.blocks.1.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+244       layers.3.residual_group.blocks.1.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.21%  4.644864e+07
+245  layers.3.residual_group.blocks.1.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+246    layers.3.residual_group.blocks.1.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       1.53%  0.000000e+00
+247       layers.3.residual_group.blocks.1.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+248           layers.3.residual_group.blocks.1.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.24%  0.000000e+00
+249         layers.3.residual_group.blocks.1.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.40%  4.721520e+07
+250         layers.3.residual_group.blocks.1.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+251         layers.3.residual_group.blocks.1.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+252        layers.3.residual_group.blocks.1.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+253           layers.3.residual_group.blocks.2.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.21%  0.000000e+00
+254        layers.3.residual_group.blocks.2.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.62%  1.078886e+08
+255  layers.3.residual_group.blocks.2.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+256       layers.3.residual_group.blocks.2.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.20%  4.644864e+07
+257  layers.3.residual_group.blocks.2.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+258    layers.3.residual_group.blocks.2.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       0.89%  0.000000e+00
+259       layers.3.residual_group.blocks.2.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+260           layers.3.residual_group.blocks.2.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.27%  0.000000e+00
+261         layers.3.residual_group.blocks.2.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.42%  4.721520e+07
+262         layers.3.residual_group.blocks.2.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.24%  0.000000e+00
+263         layers.3.residual_group.blocks.2.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.31%  4.721496e+07
+264        layers.3.residual_group.blocks.2.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+265           layers.3.residual_group.blocks.3.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.26%  0.000000e+00
+266        layers.3.residual_group.blocks.3.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.61%  1.078886e+08
+267  layers.3.residual_group.blocks.3.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+268       layers.3.residual_group.blocks.3.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.21%  4.644864e+07
+269  layers.3.residual_group.blocks.3.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+270    layers.3.residual_group.blocks.3.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       1.45%  0.000000e+00
+271       layers.3.residual_group.blocks.3.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+272           layers.3.residual_group.blocks.3.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.24%  0.000000e+00
+273         layers.3.residual_group.blocks.3.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.42%  4.721520e+07
+274         layers.3.residual_group.blocks.3.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+275         layers.3.residual_group.blocks.3.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+276        layers.3.residual_group.blocks.3.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+277           layers.3.residual_group.blocks.4.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.26%  0.000000e+00
+278        layers.3.residual_group.blocks.4.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.59%  1.078886e+08
+279  layers.3.residual_group.blocks.4.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+280       layers.3.residual_group.blocks.4.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.20%  4.644864e+07
+281  layers.3.residual_group.blocks.4.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+282    layers.3.residual_group.blocks.4.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       0.94%  0.000000e+00
+283       layers.3.residual_group.blocks.4.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+284           layers.3.residual_group.blocks.4.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.27%  0.000000e+00
+285         layers.3.residual_group.blocks.4.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.41%  4.721520e+07
+286         layers.3.residual_group.blocks.4.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.24%  0.000000e+00
+287         layers.3.residual_group.blocks.4.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.32%  4.721496e+07
+288        layers.3.residual_group.blocks.4.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+289           layers.3.residual_group.blocks.5.norm1    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.26%  0.000000e+00
+290        layers.3.residual_group.blocks.5.attn.qkv       64  60         64 180   10980.0       0.04            8,128.0        4,194,304.0  60702720.0   47185920.0       0.73%  1.078886e+08
+291  layers.3.residual_group.blocks.5.attn.attn_drop    6  64  64      6  64  64       0.0       0.09                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+292       layers.3.residual_group.blocks.5.attn.proj       64  60         64  60    3660.0       0.01            8,128.0        4,194,304.0  30720000.0   15728640.0       0.22%  4.644864e+07
+293  layers.3.residual_group.blocks.5.attn.proj_drop       64  60         64  60       0.0       0.01                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+294    layers.3.residual_group.blocks.5.attn.softmax    6  64  64      6  64  64       0.0       0.09           73,727.0                0.0         0.0          0.0       1.52%  0.000000e+00
+295       layers.3.residual_group.blocks.5.drop_path    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+296           layers.3.residual_group.blocks.5.norm2    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.24%  0.000000e+00
+297         layers.3.residual_group.blocks.5.mlp.fc1    65536  60      65536 120    7320.0      30.00    8,589,869,056.0    4,294,967,296.0  15757920.0   31457280.0       0.41%  4.721520e+07
+298         layers.3.residual_group.blocks.5.mlp.act    65536 120      65536 120       0.0      30.00                0.0                0.0         0.0          0.0       0.25%  0.000000e+00
+299         layers.3.residual_group.blocks.5.mlp.fc2    65536 120      65536  60    7260.0      15.00    8,589,869,056.0    4,294,967,296.0  31486320.0   15728640.0       0.34%  4.721496e+07
+300        layers.3.residual_group.blocks.5.mlp.drop    65536  60      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.00%  0.000000e+00
+301                                    layers.3.conv   60 256 256     60 256 256   32460.0      15.00    4,246,732,800.0    2,127,298,560.0  15858480.0   15728640.0       0.96%  3.158712e+07
+302                             layers.3.patch_embed   60 256 256      65536  60       0.0      15.00                0.0                0.0         0.0          0.0       0.01%  0.000000e+00
+303                           layers.3.patch_unembed    65536  60     60 256 256       0.0      15.00                0.0                0.0         0.0          0.0       0.01%  0.000000e+00
+304                                             norm    65536  60      65536  60     120.0      15.00                0.0                0.0         0.0          0.0       0.16%  0.000000e+00
+305                                  conv_after_body   60 256 256     60 256 256   32460.0      15.00    4,246,732,800.0    2,127,298,560.0  15858480.0   15728640.0       1.19%  3.158712e+07
+306                                       upsample.0   60 256 256     48 256 256   25968.0      12.00    3,397,386,240.0    1,701,838,848.0  15832512.0   12582912.0       0.88%  2.841542e+07
+307                                       upsample.1   48 256 256    3 1024 1024       0.0      12.00                0.0                0.0         0.0          0.0       0.07%  0.000000e+00
+308                                                                               897228.0    3540.26  437,159,261,160.0  218,808,188,928.0         0.0          0.0     100.00%  6.173291e+09
+==============================================================================================================================================================================================
+Total params: 897,228
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total memory: 3540.26MB
+Total MAdd: 437.16GMAdd
+Total Flops: 218.81GFlops
+Total MemR+W: 5.75GB
+
+==================== DONE ====================
+Total time: 80.0209
